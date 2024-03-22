@@ -8,69 +8,110 @@ body {
     background-position: center;
     background-repeat: no-repeat; 
 }
-
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; 
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5); 
     color: #fff;
     padding: 0.625rem 1.25rem;
     backdrop-filter: blur(0.625rem);
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); 
-    border-radius: 10.3125rem; 
+    /* border-radius: 10.3125rem;  */
+}
 
-   
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.25rem; 
 }
 
 
+.navbar a i {
+    margin-top:1%;
+    margin-right: 0.3125rem; 
+}
 
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            margin-right: 1.25rem;
-        }
-        .navbar a i {
-            margin-top:1%;
-            margin-right: 0.3125rem; 
-        }
+.navbar a.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 
-        .navbar a.logo {
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
+.log_in {
+    padding-right: 10px; /* Adjust the padding value as needed */
+}
 
-        .website-name {
-            text-align: center; /* Center align the text */
-        }
+.website-name h1 {
+    color: #FFECD6;
+    font-family: "Bowlby One SC", sans-serif;
+   
+    font-size: 4.25rem;
+    
+    letter-spacing: 0.1875rem;
+    
+
+}
+.website-name {
+    text-align: center;
+    padding: 2rem 0; /* Adjust the padding value as needed */
+}
+.website-text {
+    font-family: "Cantata One", serif;
+    color:#fff;
+    text-align: center;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    text-decoration-skip-ink: 1.25rem; 
+}
+
         
-        .website-name h1 {
-            color: #FFECD6;
-            font-family: "Bowlby One SC", sans-serif;
-            /* font-family: "Brush Script MT", cursive; */
-            font-size: 4.25rem;
-            /* text-shadow: 0.125rem 0.125rem 0.125rem #aaa; */
-            letter-spacing: 0.1875rem;
-            
+        /* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color:white;
+    border: none;
+    cursor: pointer;
+}
 
-        }
-        /* @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        } */
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style the dropdown button when hovering over the dropdown content */
+.dropdown:hover .dropbtn {
+    background-color: #ccc;
+}
+
+
+h3{
+    font-family: "Cantata One", serif;
+
+}
         
-        .website-text{
-            color:whitesmoke;
-            font-size: 1.625rem;
-
-            white-space: nowrap; /* Prevent text from wrapping */
-            overflow: hidden; /* Hide overflowing text */
-            animation: marquee 20s linear infinite; /* Use the marquee animation with a 10-second duration */
-        }
         
         
 
@@ -89,33 +130,79 @@ body {
             margin-bottom: 1.25rem; /* Add margin at the bottom to create a gap */
             height: 18.75rem;
         }
+        .website-name h1 {
+    color: #FFECD6;
+    font-family: "Bowlby One SC", sans-serif;
+   
+    font-size: 4.25rem;
+    
+    letter-spacing: 0.1875rem;
+    
+
+}
+
+
+
         
         .section .description p {
-            /* font-family: Arial, sans-serif;  */
-            /* font-family: "Brush Script MT", cursive; */
-            font-family: "Kurale", serif;
-            font-size: 1.5625rem; /* Adjust font size */
-            line-height: 1.5; /* Adjust line height for better readability */
-            text-align: center; /* Center align the text */
-            padding: 1.25rem; /* Add padding inside the box */
-            background-color: rgba(51, 51, 51, 0.5); /* Transparent black background */
-            border-radius: 0.625rem; /* Rounded corners */
-            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+           
+            font-family: "Cantata One", serif;
+            font-size: 1.5625rem; 
+            line-height: 1.5; 
+            text-align: center; 
+            padding: 1.25rem;
+            /* background-color: rgba(51, 51, 51, 0.5); 
+             */
+             background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 0.625rem; 
+            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1); 
             margin-left: 3.125rem;
         }
         
+        .services-title {
+            font-family: "Cantata One", serif; /* Set font family */
+            font-size: 2rem; /* Increase font size as needed */
+        }
         
         .section .description {
+            font-family: "Cantata One", serif;
             flex: 2;
             text-align: right; /* Align text to the right */
             color:#FFECD6
         }
         
         .section .description h3 {
-            /* font-family: Arial, sans-serif; */
-            /* font-family: "Brush Script MT", cursive; */
+            font-family: "Cantata One", serif;
             font-size: 1.875rem; /* Adjust font size */
             text-align: center;
+        }
+        .services-title {
+            text-align: center;
+            margin-top: 3.125rem;
+            color: white;
+        }
+        
+        .services {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.25rem;
+            overflow: hidden;
+        }
+        
+        .service {
+            flex: 1;
+            padding: 1.25rem;
+            background-color: rgba(51, 51, 51, 0.5);
+            border-radius: 0.625rem;
+            box-shadow: 0 0 1.25rem rgba(255, 255, 255, 0.3);
+            margin-right: 1.25rem;
+        }
+        .service h3 {
+            margin-bottom: 0.625rem;
+            color: white;
+        }
+        .service p {
+            color: white;
         }
         
         
@@ -172,40 +259,8 @@ body {
     line-height: 1.5;
     color: #333; /* Adjust text color */
 }
-/* Center align the Services title */
-.services-title {
-    text-align: center;
-    margin-top: 3.125rem;
-    color: white; /* Set text color to white */
-}
 
-/* Style for Services Section */
-.services {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.25rem; /* Reduced margin-top for better spacing */
-}
 
-/* Style for Service Columns */
-.service {
-    flex: 1;
-    padding: 1.25rem;
-    background-color: rgba(51, 51, 51, 0.5); /* Transparent white background */
-    border-radius: 0.625rem; /* Rounded corners */
-    box-shadow: 0 0 1.25rem rgba(255, 255, 255, 0.3); /* Glass effect */
-    margin-right: 1.25rem; /* Add space between columns */
-}
-
-/* Style for Service Title */
-.service h3 {
-    margin-bottom: 0.625rem;
-    color: white; /* White text color */
-}
-
-/* Style for Service Description */
-.service p {
-    color: white; /* White text color */
-}
 
 
 
@@ -234,15 +289,3 @@ body {
     border: 0.0625rem solid #ccc; /* Border color */
 }
 
-.footer input[type="submit"] {
-    background-color: #f44336;
-    color: #fff;
-    border: none;
-    padding: 0.625rem 1.25rem;
-    cursor: pointer;
-    border-radius: 0.3125rem; /* Rounded corners */
-}
-
-.footer input[type="submit"]:hover {
-    background-color: #cc0000; /* Darker red on hover */
-}

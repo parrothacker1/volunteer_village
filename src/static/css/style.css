@@ -1,0 +1,238 @@
+body {
+    /* background-image: url("https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNvbW11bml0eSUyMHNlcnZpY2V8ZW58MHx8MHx8fDA%3D"); */
+    background-image: url("new.jpg");
+    /* background-image: url("https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
+    /* background-image: url("https://images.unsplash.com/photo-1557682268-e3955ed5d83f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D"); */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    color: #fff;
+    padding: 0.625rem 1.25rem;
+    backdrop-filter: blur(0.625rem);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); 
+    border-radius: 10.3125rem; 
+
+    /* background-color: rgba(51, 51, 51, 0.5); 
+    border-radius: 0.625rem; 
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1);  */
+}
+
+
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 1.25rem;
+        }
+        .navbar a i {
+            margin-top:1%;
+            margin-right: 0.3125rem; /* Add space after the icon */
+        }
+
+        .navbar a.logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .website-name {
+            text-align: center; /* Center align the text */
+        }
+        
+        .website-name h1 {
+            color: #FFECD6;
+            font-family: "Bowlby One SC", sans-serif;
+            /* font-family: "Brush Script MT", cursive; */
+            font-size: 4.25rem;
+            text-shadow: 0.125rem 0.125rem 0.125rem #aaa;
+            letter-spacing: 0.1875rem;
+            
+
+        }
+        /* @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        } */
+        
+        .website-text{
+            color:whitesmoke;
+            font-size: 1.625rem;
+
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide overflowing text */
+            animation: marquee 20s linear infinite; /* Use the marquee animation with a 10-second duration */
+        }
+        
+        
+
+        .section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3.125rem;
+        }
+        
+        .section .image img {
+            flex: 1;
+            border-radius: 0.625rem; /* Rounded corners for the image */
+            object-fit: cover; /* Ensure the image covers the entire container */
+            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+            margin-bottom: 1.25rem; /* Add margin at the bottom to create a gap */
+            height: 18.75rem;
+        }
+        
+        .section .description p {
+            /* font-family: Arial, sans-serif;  */
+            /* font-family: "Brush Script MT", cursive; */
+            font-family: "Kurale", serif;
+            font-size: 1.5625rem; /* Adjust font size */
+            line-height: 1.5; /* Adjust line height for better readability */
+            text-align: center; /* Center align the text */
+            padding: 1.25rem; /* Add padding inside the box */
+            background-color: rgba(51, 51, 51, 0.5); /* Transparent black background */
+            border-radius: 0.625rem; /* Rounded corners */
+            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+            margin-left: 3.125rem;
+        }
+        
+        
+        .section .description {
+            flex: 2;
+            text-align: right; /* Align text to the right */
+            color:#FFECD6
+        }
+        
+        .section .description h3 {
+            /* font-family: Arial, sans-serif; */
+            /* font-family: "Brush Script MT", cursive; */
+            font-size: 1.875rem; /* Adjust font size */
+            text-align: center;
+        }
+        
+        
+        /* Testimonials Styles */
+.testimonials {
+    margin-top: 3.125rem; /* Adjust spacing from previous content */
+    display: flex;
+    justify-content: center;
+}
+
+.testimonial-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.testimonial {
+    width: 18.75rem;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    border-radius: 1.25rem; /* Rounded corners for testimonials box */
+    margin: 1.25rem;
+    padding: 1.25rem;
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    text-align: center;
+}
+
+.profile-pic {
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%; /* Circular profile picture */
+    overflow: hidden; /* Ensure picture stays within circle */
+    margin: 0 auto 0.9375rem; /* Center align and add space below */
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure picture fills the circle */
+}
+
+.feedback {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333; /* Adjust text color */
+}
+/* Center align the Services title */
+.services-title {
+    text-align: center;
+    margin-top: 3.125rem;
+    color: white; /* Set text color to white */
+}
+
+/* Style for Services Section */
+.services {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.25rem; /* Reduced margin-top for better spacing */
+}
+
+/* Style for Service Columns */
+.service {
+    flex: 1;
+    padding: 1.25rem;
+    background-color: rgba(51, 51, 51, 0.5); /* Transparent white background */
+    border-radius: 0.625rem; /* Rounded corners */
+    box-shadow: 0 0 1.25rem rgba(255, 255, 255, 0.3); /* Glass effect */
+    margin-right: 1.25rem; /* Add space between columns */
+}
+
+/* Style for Service Title */
+.service h3 {
+    margin-bottom: 0.625rem;
+    color: white; /* White text color */
+}
+
+/* Style for Service Description */
+.service p {
+    color: white; /* White text color */
+}
+
+
+
+        
+.footer {
+    background-color: black; /* Set background color to black */
+    color: #fff;
+    text-align: center;
+    padding: 1.25rem;
+    margin-top: 3.125rem;
+    border-radius: 0.3125rem;
+}
+
+.footer p {
+    margin: 0.3125rem;
+}
+
+.footer input[type="text"],
+.footer textarea {
+    width: 100%;
+    padding: 0.625rem;
+    margin: 0.625rem 0;
+    box-sizing: border-box;
+    border-radius: 0.3125rem; /* Rounded corners */
+    background-color: #f2f2f2; /* Soft grey color */
+    border: 0.0625rem solid #ccc; /* Border color */
+}
+
+.footer input[type="submit"] {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    cursor: pointer;
+    border-radius: 0.3125rem; /* Rounded corners */
+}
+
+.footer input[type="submit"]:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}

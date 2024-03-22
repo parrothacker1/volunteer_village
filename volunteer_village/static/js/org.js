@@ -160,8 +160,8 @@ function displayTasks() {
 
         // Create task details HTML
         taskItem.innerHTML = `
-            <div id="task_content"><p><strong>${task.name}</strong></p>
-            <p>${task.description}</p>
+            <div id="task_content"><p><strong>Name: ${task.name}</strong></p>
+            <p>Description: ${task.description}</p>
             <p>City: ${task.city}</p>
             <p>Address: ${task.address}</p>
             <p>Start Date: ${task.startDate}</p>

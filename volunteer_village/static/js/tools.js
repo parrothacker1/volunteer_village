@@ -121,18 +121,35 @@
     
 
     // Function to simulate signup for an activity
-    function signupForActivity(taskId) {
-        const taskIndex = tasks.findIndex(task => task.id === taskId);
-        if (taskIndex !== -1) {
-            const task = tasks[taskIndex];
+     
+function signupForActivity(taskId) {
+    const taskIndex = tasks.findIndex(task => task.id === taskId);
+    if (taskIndex !== -1) {
+        const task = tasks[taskIndex];
+        // Show confirmation popup
+        const confirmationPopup = document.getElementById("confirmationPopup");
+        confirmationPopup.style.display = "block";
+
+        // Handle confirmation
+        const confirmSignupBtn = document.getElementById("confirmSignupBtn");
+        confirmSignupBtn.addEventListener("click", () => {
             // Simulate sending data to server (AJAX request or form submission)
             setTimeout(() => {
                 // On successful submission
                 task.volunteer = { name: "John Doe", email: "john@example.com" }; // Replace with actual volunteer data
                 displayTasks(tasks); // Update task list
+                confirmationPopup.style.display = "none"; // Hide the popup
             }, 1000); // Simulate server response time (1 second)
-        }
+        });
+
+        // Handle cancel
+        const cancelSignupBtn = document.getElementById("cancelSignupBtn");
+        cancelSignupBtn.addEventListener("click", () => {
+            confirmationPopup.style.display = "none"; // Hide the popup
+        });
     }
+}
+
 
     // Initial display of tasks
     displayTasks(tasks);

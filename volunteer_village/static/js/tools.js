@@ -64,41 +64,45 @@
     function displayTasks(tasks) {
         const taskList = document.getElementById("taskList");
         taskList.innerHTML = ""; // Clear previous tasks
-
+    
         tasks.forEach(task => {
+            const taskContainer = document.createElement("div");
+            taskContainer.classList.add("task-container");
+    
             const taskDiv = document.createElement("div");
             taskDiv.classList.add("task");
-
+    
             const taskDetails = document.createElement("div");
             taskDetails.style.display = "flex";
             taskDetails.style.flexDirection = "column";
-
+    
             const teamPara = document.createElement("p");
             teamPara.classList.add("team");
             teamPara.textContent = task.team;
             taskDetails.appendChild(teamPara);
-
+    
             const taskPara = document.createElement("p");
             taskPara.textContent = task.task;
             taskDetails.appendChild(taskPara);
-
+    
             const addressPara = document.createElement("p");
             addressPara.classList.add("address");
             addressPara.textContent = "Address: " + task.address;
             taskDetails.appendChild(addressPara);
-
+    
             const skillsPara = document.createElement("p");
             skillsPara.classList.add("skills");
             skillsPara.textContent = "Skills required: " + task.skills.join(", ");
             taskDetails.appendChild(skillsPara);
-
+    
             const timePara = document.createElement("p");
             timePara.classList.add("time");
             timePara.textContent = "Time: " + task.start_time + " to " + task.end_time;
             taskDetails.appendChild(timePara);
-
+    
             taskDiv.appendChild(taskDetails);
-
+            taskContainer.appendChild(taskDiv);
+    
             const signupBtn = document.createElement("button");
             signupBtn.classList.add("signup-btn");
             if (task.volunteer) {
@@ -109,11 +113,12 @@
                 signupBtn.textContent = "Sign Up for Activity";
                 signupBtn.addEventListener("click", () => signupForActivity(task.id));
             }
-            taskDiv.appendChild(signupBtn);
-
-            taskList.appendChild(taskDiv);
+            taskContainer.appendChild(signupBtn);
+    
+            taskList.appendChild(taskContainer);
         });
     }
+    
 
     // Function to simulate signup for an activity
     function signupForActivity(taskId) {

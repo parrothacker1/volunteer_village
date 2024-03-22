@@ -238,4 +238,28 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+function createDateTime() {
+    const startDate = document.getElementById('startDate').value;
+    const startTime = document.getElementById('startTime').value;
+    const endDate = document.getElementById('endDate').value;
+    const endTime = document.getElementById('endTime').value;
 
+    // Concatenate date and time strings
+    const startDateTimeString = startDate + 'T' + startTime;
+    const endDateTimeString = endDate + 'T' + endTime;
+
+    // Create Date objects from the concatenated strings
+    const startDateTime = new Date(startDateTimeString);
+    const endDateTime = new Date(endDateTimeString);
+
+    // Output the Date objects (optional)
+    console.log('Start Date:', startDateTime);
+    console.log('End Date:', endDateTime);
+
+    // Convert Date objects to strings (optional)
+    const startDateTimeStringified = startDateTime.toString();
+    const endDateTimeStringified = endDateTime.toString();
+
+    console.log('Start Date String:', startDateTimeStringified);
+    console.log('End Date String:', endDateTimeStringified);
+  }

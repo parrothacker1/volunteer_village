@@ -1,114 +1,47 @@
-/* body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
-h1 {
-    text-align: center;
-}
-.task {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.team {
-    font-weight: bold;
-}
-.address {
-    font-style: italic;
-}
-.skills {
-    font-style: italic;
-}
-.time {
-    font-style: italic;
-}
-.signup-btn {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-}
-.signup-btn.success {
-    background-color: #45a049;
-}
-.signup-btn:disabled {
-    background-color: gray;
-    cursor: not-allowed;
-}
-
-.search-container {
-    width: 250px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-.search-container input[type=text], .search-container select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-.search-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-}
-.search-btn:hover {
-    background-color: #45a049;
-} */
-
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Vollkorn", serif;
     margin: 0;
-    background-color: aliceblue;
+    background-image: url("https://images.unsplash.com/photo-1604339454409-701c5278c546?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
     color: black;
 }
 
 h1 {
+    
     text-align: center;
 }
 
 .search-container {
-    width: fit-content; /* Set width to fit the content */
-    padding: 20px; /* Increase padding for better spacing */
+    width: fit-content;
+    padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px; /* Round corners for the container */
-    margin: 50px auto; /* Center the container horizontally */
+    border-radius: 5px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); */
+}
+.search-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .search-container label {
-    margin-bottom: 10px; /* Add gap between each label */
+    margin-bottom: 10px;
 }
 
-.search-container input[type=text],
+.search-container input[type="text"],
 .search-container select,
 .search-container button {
-    width: calc(100% - 16px); /* Adjust width to accommodate padding and border */
+    width: calc(100% - 16px);
     padding: 8px;
     margin-top: 5px;
     margin-bottom: 10px;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 4px; /* Round corners for input boxes and button */
+    border-radius: 4px;
     box-sizing: border-box;
-    color:black; /* Set text color to white */
-    background-color: transparent; /* Set background color to transparent */
 }
 
 .search-btn {
@@ -116,74 +49,29 @@ h1 {
     color: white;
     padding: 10px 15px;
     border: none;
-    border-radius: 4px; /* Round corners for the button */
-    cursor: pointer;
-    width: auto; /* Set width to auto for dynamic button size */
-}
-
-.search-btn:hover {
-    background-color: #45a049;
-}
-.search-container label {
-    margin-bottom: 10px; 
-}
-
-/* .task-list task{
-    border-color: black;
-    border-radius: 4px;
-    
-} */
-/* #taskList {
-    width: fit-content; 
-    margin: 0 auto; 
-    padding: 20px; 
-    background-color: rgba(255, 255, 255, 0.5); 
-    border-radius: 10px; 
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); 
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    margin-top: 20px;
-}
-
-.signup-box,
-.task-box {
-    width: calc(50% - 10px); 
-    margin-bottom: 20px;
-    padding: 20px; 
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px; 
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); 
-}
-
-.signup-box button {
-    padding: 10px 20px; 
-    background-color: #4CAF50;
-    color: white;
-    border: none;
     border-radius: 4px;
     cursor: pointer;
-} */
+    width: auto;
+}
 
 .task-container {
-    width: 80%; /* Adjust width as needed */
+    font-size: 15px;
+    width: 80%;
     margin: 50px auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.5); /* Glass effect background */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glass effect shadow */
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); */
 }
 
 .task-item {
     margin-bottom: 20px;
     padding: 20px;
-    background-color: transparent; /* Transparent background for task items */
-    border-radius: 8px; /* Rounded corners for task items */
-    border: 2px solid black; /* Border with opacity for task items */
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid black;
 }
+
 .signup-btn {
     padding: 8px 12px;
     border: none;
@@ -191,7 +79,5 @@ h1 {
     cursor: pointer;
     background-color: #4CAF50;
     color: white;
-    float: inline-start; /* Align the button to the right */
-    
+    float: inline-start;
 }
-

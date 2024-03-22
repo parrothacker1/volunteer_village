@@ -1,18 +1,19 @@
 body {
-    /* background-image: url("https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNvbW11bml0eSUyMHNlcnZpY2V8ZW58MHx8MHx8fDA%3D"); */
-    background-image: url("https://images.unsplash.com/photo-1614854262340-ab1ca7d079c7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-    /* background-image: url("https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
-    /* background-image: url("https://images.unsplash.com/photo-1557682268-e3955ed5d83f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D"); */
-    background-size: cover; /* Cover the entire background */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Do not repeat the background image */
+    /* background-image: url("https://images.unsplash.com/photo-1614854262340-ab1ca7d079c7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    */
+
+    background-image: url("https://images.unsplash.com/photo-1604339454409-701c5278c546?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    background-color: rgba(0, 0, 0, 0.5); 
     color: #fff;
     padding: 0.625rem 1.25rem;
     backdrop-filter: blur(0.625rem);
@@ -31,7 +32,7 @@ body {
         }
         .navbar a i {
             margin-top:1%;
-            margin-right: 0.3125rem; /* Add space after the icon */
+            margin-right: 0.3125rem; 
         }
 
         .navbar a.logo {
@@ -48,7 +49,7 @@ body {
             font-family: "Bowlby One SC", sans-serif;
             /* font-family: "Brush Script MT", cursive; */
             font-size: 4.25rem;
-            text-shadow: 0.125rem 0.125rem 0.125rem #aaa;
+            /* text-shadow: 0.125rem 0.125rem 0.125rem #aaa; */
             letter-spacing: 0.1875rem;
             
 
@@ -118,28 +119,39 @@ body {
         }
         
         
-        /* Testimonials Styles */
-.testimonials {
-    margin-top: 3.125rem; /* Adjust spacing from previous content */
-    display: flex;
-    justify-content: center;
-}
-
-.testimonial-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.testimonial {
-    width: 18.75rem;
-    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
-    border-radius: 1.25rem; /* Rounded corners for testimonials box */
-    margin: 1.25rem;
-    padding: 1.25rem;
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-    text-align: center;
-}
+        .testimonials {
+            margin-top: 3.125rem;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .testimonial-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .testimonial {
+            width: 18.75rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 1.25rem;
+            margin: 1.25rem;
+            padding: 1.25rem;
+            box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: box-shadow 0.3s ease, transform 0.3s ease, filter 0.3s ease; /* Add transitions for smooth effects */
+        }
+        
+        .testimonial:hover {
+            box-shadow: 0 0 1.25rem rgba(0, 255, 255, 0.8); /* Glowing border on hover */
+            transform: scale(1.1); /* Scale up on hover */
+        }
+        
+        .testimonial:not(:hover) {
+            filter: brightness(70%); /* Dim other boxes */
+        }
+        
+        
 
 .profile-pic {
     width: 6.25rem;

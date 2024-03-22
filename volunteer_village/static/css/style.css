@@ -289,3 +289,68 @@ h3{
     border: 0.0625rem solid #ccc; /* Border color */
 }
 
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        justify-content: space-between; /* Adjust alignment */
+        padding: 0.625rem 0.9375rem; /* Adjust padding */
+    }
+    
+    .navbar a {
+        margin-left: 0.625rem; /* Adjust margin */
+        font-size: 0.875rem; /* Adjust font size */
+    }
+    
+    .navbar a.logo {
+        font-size: 1.25rem; /* Adjust font size */
+    }
+    .website-name h1 {
+        font-size: 3rem; /* Adjust font size for smaller screens */
+    }
+
+    .website-text {
+        font-size: 1.25rem; /* Adjust font size for smaller screens */
+    }
+
+    .section .description p {
+        font-size: 1.25rem; /* Adjust font size for smaller screens */
+        padding: 1rem; /* Adjust padding */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .services {
+        flex-wrap: wrap; /* Allow boxes to wrap to new line */
+        justify-content: center; /* Center align the boxes */
+    }
+
+    .service {
+        width: calc(50% - 1rem); /* Make each box take half the width with margin */
+        margin-bottom: 1rem; /* Add margin between boxes */
+    }
+
+    .section .image img {
+        height: 12.5rem; /* Adjust height for smaller screens */
+    }
+
+    .testimonial {
+        width: calc(50% - 2rem); /* Make each testimonial take half the width with margin */
+        margin: 1rem; /* Adjust margin */
+        padding: 1rem; /* Adjust padding */
+    }
+
+    .profile-pic {
+        width: 5rem; /* Adjust width for smaller screens */
+        height: 5rem; /* Adjust height for smaller screens */
+        margin: 0 auto 0.5rem; /* Adjust margin */
+    }
+
+    .footer {
+        padding: 1rem; /* Adjust padding */
+    }
+
+    .footer input[type="text"],
+    .footer textarea {
+        padding: 0.5rem; /* Adjust padding */
+        margin: 0.5rem 0; /* Adjust margin */
+    }
+}

@@ -1,69 +1,91 @@
-//  // Simulated user data from the server (replace with actual data from server)
-//  const userData = {
-//     isLoggedIn: true,
-//     firstName: "" // Leave empty initially
-// };
+document.addEventListener("DOMContentLoaded", function() {
+    // Function to handle user login
+    function loginUser(username) {
+        const loggedInUser = username; // Replace with actual logged-in user's name
+        const loginSignupLink = document.querySelector('.navbar a[href="/access-account"]');
+        loginSignupLink.innerHTML = `<i class="ph ph-user"></i>${loggedInUser}`;
 
-// // Function to create a dropdown menu with logout button
-// function createDropdownMenu() {
-//     const dropdownMenu = document.createElement("div");
-//     dropdownMenu.classList.add("dropdown-menu");
+        // Create dropdown menu for user actions
+        const userDropdown = document.createElement('div');
+        userDropdown.classList.add('dropdown');
+        userDropdown.innerHTML = `
+            <a class="dropbtn" href="#">${loggedInUser}</a>
+            <div class="dropdown-content">
+                <a href="#show-profile">Show Profile</a>
+                <a href="#" id="sign-out">Sign Out</a>
+            </div>
+        `;
 
-//     const logoutButton = document.createElement("button");
-//     logoutButton.textContent = "Logout";
-//     logoutButton.addEventListener("click", () => {
-//         // Implement logout functionality here (e.g., clear session, redirect to login page)
-//         alert("Logout functionality should be implemented here.");
-//     });
+        // Replace Log In/SignUp with user's dropdown menu
+        document.querySelector('.navbar div').replaceChild(userDropdown, loginSignupLink);
 
-//     dropdownMenu.appendChild(logoutButton);
-//     return dropdownMenu;
-// }
+        // Add event listener for sign-out button
+        document.getElementById('sign-out').addEventListener('click', function(event) {
+            event.preventDefault();
+            // Clear tokens and revert navbar to initial state
+            localStorage.removeItem('access_token');
+            sessionStorage.removeItem('refresh_token');
+            revertNavbar();
+        });
+    }
 
-// // Function to update navbar based on user login status and data
-// function updateNavbar(userData) {
-//     const userLinksContainer = document.getElementById("userLinks");
+    // Function to revert navbar to initial state (showing Log In/SignUp link)
+    function revertNavbar() {
+        const loginSignupLink = document.createElement('a');
+        loginSignupLink.href = '/access-account';
+        loginSignupLink.textContent = 'Log In/SignUp';
+        document.querySelector('.navbar div').replaceChildren(loginSignupLink);
+    }
 
-//     if (userData.isLoggedIn) {
-//         // Create a button with user's first name
-//         const userButton = document.createElement("button");
-//         userButton.textContent = userData.firstName || "User";
-//         userButton.addEventListener("click", () => {
-//             // Toggle dropdown menu on button click
-//             const dropdownMenu = userButton.nextElementSibling;
-//             dropdownMenu.classList.toggle("show");
-//         });
+    // Function to handle saving access token and refresh token
+    function saveTokens(access_token, refresh_token) {
+        // Save access token in local storage for 120 days
+        localStorage.setItem('access_token', access_token);
+        // Save refresh token in session storage for 15 minutes
+        sessionStorage.setItem('refresh_token', refresh_token);
 
-//         // Append user button and dropdown menu to navbar
-//         userLinksContainer.appendChild(userButton);
-//         userLinksContainer.appendChild(createDropdownMenu());
-//     } else {
-//         // Create a login/signup button with href
-//         const loginSignupButton = document.createElement("a");
-//         loginSignupButton.textContent = "Login/Signup";
-//         loginSignupButton.href = "/login"; // Replace with actual login URL
-//         loginSignupButton.addEventListener("click", (event) => {
-//             // Prevent default link behavior to handle login/signup action
-//             event.preventDefault();
-//             // Implement login/signup functionality here (e.g., open modal)
-//             alert("Login/Signup functionality should be implemented here.");
-//         });
+        // Simulate user login with saved access token
+        fetch('/get-username', {
+            headers: {
+                'Authorization': `Bearer ${access_token}`
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.username) {
+                loginUser(data.username);
+            }
+        })
+        .catch(error => console.error('Error fetching username:', error));
+    }
 
-//         // Append login/signup button to navbar
-//         userLinksContainer.appendChild(loginSignupButton);
-//     }
-// }
-
-// // Fetch user data from the server (replace with actual fetch logic)
-// // For demonstration, setTimeout is used to simulate async fetch
-// setTimeout(() => {
-//     // Simulated data received from the server
-//     const serverData = {
-//         isLoggedIn: true,
-//         firstName: "John" // Replace with actual data from server
-//     };
-    
-//     // Update user data and navbar based on server response
-//     Object.assign(userData, serverData);
-//     updateNavbar(userData);
-// }, 1000); // Simulating 1 second delay for fetch
+    // Make a POST request to the login endpoint
+    fetch('/api/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            // Add any necessary login credentials (e.g., username, password)
+            // For example:
+            // username: 'your_username',
+            // password: 'your_password'
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to log in');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Extract access token and refresh token from the response
+        const { access_token, refresh_token } = data;
+        if (access_token && refresh_token) {
+            saveTokens(access_token, refresh_token);
+        } else {
+            throw new Error('Access token or refresh token missing in response');
+        }
+    })
+    .catch(error => console.error('Login failed:', error));
+});

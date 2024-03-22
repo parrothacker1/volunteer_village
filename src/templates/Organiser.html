@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="organiser.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer+SC&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer+SC&family=Noto+Serif+Toto:wght@400..700&display=swap" rel="stylesheet">
+<title>Volunteer Tasks</title>
+</head>
+<body>
+  <h1>Task Management</h1>
+  <form id="taskForm">
+    
+      <label for="taskName">Task Name:</label>
+      <input type="text" id="taskName" required><br>
+      <hr>
+      <label for="taskDescription">Task Description:</label><br>
+      <textarea id="taskDescription" required></textarea><br>
+      <hr>
+      <label for="city">City:</label>
+      <input type="text" id="city" required><br>
+      <label for="address">Address:</Address></label>
+      <textarea name="Address" id="address" cols="30" rows="2"></textarea>
+      <hr>
+      <label for="startDate">Start Date:</label>
+      <input type="date" id="startDate" required><br>
+      <label for="startTime">Start Time:</label>
+      <input type="time" id="startTime" required><br>
+      <label for="endDate">End Date:</label>
+      <input type="date" id="endDate" required><br>
+      <label for="endTime">End Time:</label>
+      <input type="time" id="endTime" required><br>
+      <hr>
+      <label>Required Skills:</label><br>
+      <input type="checkbox" name="skills" value="Teaching"> Teaching<br>
+      <input type="checkbox" name="skills" value="Communication"> Communication<br>
+      <input type="checkbox" name="skills" value="Physical Fitness"> Physical Fitness <br>
+      <input type="checkbox" name="skills" value="Gardening"> Gardening<br>
+      <input type="checkbox" name="skills" value="Project Management"> Project Management<br>
+      <input type="checkbox" name="skills" value="Community Integration"> Community Integration<br>
+      <input type="checkbox" name="skills" value="Marketing"> Marketing<br>
+      <input type="checkbox" name="skills" value="Networking"> Networking<br>
+      
+      <button type="button" onclick="addTask()">Add Task</button>
+  </form>
+  <div id="taskList">
+      
+  </div>
+</body>
+<script src="org.js"></script>
+</html> 
+

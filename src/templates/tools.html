@@ -8,9 +8,51 @@
 </head>
 <body>
     <h1>Ongoing Tasks</h1>
+    <div class="search-container">
+        <h2>Search Tasks</h2>
+        <label for="city">City:</label>
+        <input type="text" id="city" placeholder="Enter city...">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate">
+        <label for="startTime">Start Time:</label>
+        <input type="time" id="startTime">
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate">
+        <label for="endTime">End Time:</label>
+        <input type="time" id="endTime">
+        <label for="organization">Organization:</label>
+        <input type="text" id="organization" placeholder="Enter organization...">
+        <h3>Skills:</h3>
+        <div id="skills">
+            <input type="checkbox" id="communication" value="communication">
+            <label for="communication">Communication</label><br>
+            <input type="checkbox" id="gardening" value="gardening">
+            <label for="gardening">Gardening</label><br>
+            <input type="checkbox" id="teaching" value="teaching">
+            <label for="teaching">Teaching</label><br>
+            <input type="checkbox" id="physical-fitness" value="physical-fitness">
+            <label for="physical-fitness">Physical Fitness</label><br>
+            <input type="checkbox" id="project-management" value="project-management">
+            <label for="project-management">Project Management</label><br>
+            <input type="checkbox" id="community-integration" value="community-integration">
+            <label for="community-integration">Community Integration</label><br>
+            <input type="checkbox" id="marketing" value="marketing">
+            <label for="marketing">Marketing</label><br>
+            <input type="checkbox" id="networking" value="networking">
+            <label for="networking">Networking</label><br>
+            <input type="checkbox" id="environmental-awareness" value="environmental-awareness">
+            <label for="environmental-awareness">Environmental Awareness</label><br>
+            <input type="checkbox" id="finance" value="finance">
+            <label for="finance">Finance</label><br>
+            <input type="checkbox" id="IT" value="IT">
+            <label for="IT">IT</label><br>
+        </div>
+        <button class="search-btn" onclick="searchTasks()">Search</button>
+    </div>
+    <!-- Task list -->
     <div id="taskList">
-    <!-- Task items will be dynamically added here -->
-</div>
+        <!-- Task items will be dynamically added here -->
+    </div>
 </body>
 <script src="../static/js/tools.js"></script>
 </html>

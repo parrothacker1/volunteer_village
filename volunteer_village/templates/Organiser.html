@@ -6,11 +6,11 @@
 <link rel="stylesheet" href="../static/css/organiser.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Cantata+One&family=Kurale&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer+SC&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer+SC&family=Noto+Serif+Toto:wght@400..700&display=swap" rel="stylesheet">
-<title>assign task</title>
+<title>Volunteer Tasks</title>
 </head>
 <body>
   <h1>Task Management</h1>
@@ -37,15 +37,17 @@
       <input type="time" id="endTime" required><br>
       <hr>
       <label>Required Skills:</label><br>
-      <input type="checkbox" name="skills" value="Teaching"> Teaching<br>
       <input type="checkbox" name="skills" value="Communication"> Communication<br>
-      <input type="checkbox" name="skills" value="Physical Fitness"> Physical Fitness <br>
       <input type="checkbox" name="skills" value="Gardening"> Gardening<br>
+      <input type="checkbox" name="skills" value="Teaching"> Teaching<br>
+      <input type="checkbox" name="skills" value="Physical Fitness"> Physical Fitness <br>
       <input type="checkbox" name="skills" value="Project Management"> Project Management<br>
       <input type="checkbox" name="skills" value="Community Integration"> Community Integration<br>
       <input type="checkbox" name="skills" value="Marketing"> Marketing<br>
       <input type="checkbox" name="skills" value="Networking"> Networking<br>
-      
+      <input type="checkbox" name="skills" value="Environmental Awareness">Environmental Awareness<br>
+      <input type="checkbox" name="skills" value="Finance">Finance<br>
+      <input type="checkbox" name="skills" value="IT">IT<br>
       <button type="button" onclick="addTask()">Add Task</button>
   </form>
   <div id="taskList">
@@ -54,4 +56,3 @@
 </body>
 <script src="../static/js/org.js"></script>
 </html> 
-

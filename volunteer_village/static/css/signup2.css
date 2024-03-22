@@ -14,28 +14,28 @@ body {
 
 .signup-container {
     background-color: #33333380;
-    border-radius: 15px; 
-    padding: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    border-radius: 0.938rem; 
+    padding: 1.875rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+    width: 25rem;
     transition: box-shadow 0.3s ease;
     position: absolute;
     top:3rem;
 }
 
 .signup-container:hover {
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 0.938rem rgba(0, 255, 255, 0.8);
 }
 
 .signup-container h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
     color: #ffffff;
     font-family: "Vollkorn", serif;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 0.938rem;
 }
 
 label {
@@ -51,9 +51,9 @@ input[type="number"],
 input[type="password"],
 select {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    padding: 0.625rem;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.5rem;
     box-sizing: border-box;
 }
 
@@ -61,21 +61,21 @@ input[type="submit"] {
     width: 100%;
     background-color: #007bff;
     color: white;
-    padding: 10px 15px;
+    padding: 0.625rem 0.938rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     cursor: pointer;
 }
 
 .login-container input[type="password"],
 .login-container select {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 0.0625rem solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 

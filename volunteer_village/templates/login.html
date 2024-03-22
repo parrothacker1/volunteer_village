@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Cantata+One&family=Kurale&display=swap" rel="stylesheet">
     <title>Volunteer Village - Login</title>
 </head>
 <body>
     <div class="login-container">
         <h2>Welcome to Volunteer Village</h2>
-        <form action="#" method="post">
-            
-            <input type="text" id="Email" placeholder="Email ID" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <label for="role">Role</label>
+        <label for="role"></label>
+        <br>
             <select name="role"></option>
                 <option>Organiser</option>
                 <option>Volunteer</option>
             </select>
+        <form action="#" method="post">
+            
+            <input type="text" id="Email" placeholder="Email ID" required>
+            <input type="password" name="password" placeholder="Password" required>
+            
             <input type="submit" value="Login">
             
             

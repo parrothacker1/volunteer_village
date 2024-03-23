@@ -9,6 +9,7 @@ from volunteer_village import db
 
 import jwt as JWT
 import datetime
+from pathlib import Path
 
 app=FastAPI(docs_url=False,redoc_url=False)
 BASE_DIR=Path(__file__).resolve().parent
@@ -18,6 +19,32 @@ templates=Jinja2Templates(directory=str(Path(BASE_DIR,'templates')))
 class Login(BaseModel):
     email:str
     password:str
+
+class Signup(BaseModel):
+    name:str
+    email:str
+    phone_num:str
+    state:str|None
+    city:str|None
+    password:str
+
+class TaskInput(BaseModel):
+    task_name:str
+    task_description:str
+    city:str
+    addess:str
+    start_date:str
+    end_date:str
+    skills:list
+    volunteers:list
+
+class ProfileUpdate(BaseModel):
+    email:str
+    name:str
+    state:str
+    city:str
+    phone_num:str
+
 
 # API Endpoints
 @app.post("/api/{user}/login")
@@ -35,8 +62,8 @@ async def api_volunteer_login(login:Login,user:str):
     return JSONResponse(**response)
 
 @app.post("/api/{user}/signup")
-async def api_signup(signup:db.Signup,user:str):
-    if (user=="volunteer" && state && city) or (user=="organiser"): 
+async def api_signup(signup:Signup,user:str):
+    if (user=="volunteer" and state and city) or (user=="organiser"): 
         user_exists=db.create_user(signup,user)
     else:
         return JSONResponse(content="wrong_format",status_code=status.HTTP_400_BAD_REQUEST)
@@ -73,7 +100,7 @@ async def api_getinfo(request:Request):
     return JSONResponse(**response)
 
 @app.put("/api/user")
-async def api_putinfo(user_update:db.ProfileUpdate):
+async def api_putinfo(user_update:ProfileUpdate):
     token=request.headers["Authorization"].split(" ")[1]
     response={"content":"wrong_jwt","status_code":status.HTTP_401_UNAUTHORIZED}
     try:
@@ -97,7 +124,7 @@ async def api_putinfo(user_update:db.ProfileUpdate):
     return JSONResponse(**response)
 
 @app.delete("/api/user")
-async def api_deleteinfo():
+async def api_deleteinfo(request:Request):
     token=request.headers["Authorization"].split(" ")[1]
     response={"content":"wrong_jwt","status_code":status.HTTP_401_UNAUTHORIZED}
     try:
@@ -165,7 +192,7 @@ async def api_tasks_get_list():
     return JSONResponse(**response)
 
 @app.post("/api/tasks")
-async def api_tasks_post(task_input:db.TaskInput):
+async def api_tasks_post(task_input:TaskInput):
     token=request.headers["Authorization"].split(" ")[1]
     response={"content":"not_authorized","status_code":status.HTTP_401_UNAUTHORIZED}
     try:
@@ -183,7 +210,7 @@ async def api_tasks_post(task_input:db.TaskInput):
     return JSONResponse(**response)
 
 @app.put("/api/tasks/{id}")
-async def api_tasks_put(id:int,update:db.TaskInput):
+async def api_tasks_put(id:int,update:TaskInput):
     token=request.headers["Authorization"].split(" ")[1]
     response={"content":"not_authorized","status_code":status.HTTP_401_UNAUTHORIZED}
     try:
@@ -219,26 +246,31 @@ async def api_tasks_del(id:int):
 # Webpage Endpoints
 
 @app.get("/")
-async def home():
+async def home(request:Request):
     response=templates.TemplateResponse('index.html',{'request':request})
     return response
 
 @app.get("/access-account/login")
-async def access_account_login():
+async def access_account_login(request:Request):
     response=templates.TemplateResponse('login.html',{'request':request})
     return response
 
 @app.get("/access-account/signup")
-async def access_account_signup():
+async def access_account_signup(request:Request):
     response=templates.TemplateResponse('signup2.html',{'request':request})
     return response
 
 @app.get("/tasks")
-async def tasks():
+async def tasks(request:Request):
     response=templates.TemplateResponse('login.html',{'request':request})
     return response
 
 @app.get("/about")
-async def about():
+async def about(request:Request):
     response=templates.TemplateResponse('About.html',{'request':request})
+    return response
+
+@app.exception_handler(404)
+async def custom_404_handler(request:Request,__):
+    response=templates.TemplateResponse('error.html',{'request':request})
     return response

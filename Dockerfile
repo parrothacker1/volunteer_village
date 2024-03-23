@@ -1,10 +1,6 @@
 # Use the official Python image
 FROM python:3.9
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
 # Set working directory
 WORKDIR /app
 
@@ -12,8 +8,8 @@ WORKDIR /app
 COPY pyproject.toml poetry.lock /app/
 
 # Install poetry
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-
+RUN apt update
+RUN apt install python3-poetry -y
 # Install dependencies
 RUN poetry config virtualenvs.create false && poetry install --no-dev --no-interaction --no-root
 
@@ -24,4 +20,4 @@ COPY . /app/
 EXPOSE 443
 
 # Command to run the FastAPI server
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "443", "--ssl-keyfile", "key.pem", "--ssl-certfile", "cert.pem"]
+CMD ["uvicorn", "volunteer_village:app", "--host", "0.0.0.0", "--port", "443", "--ssl-keyfile", "key.pem", "--ssl-certfile", "cert.pem"]

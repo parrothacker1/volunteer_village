@@ -16,24 +16,24 @@ connection=engine.connect()
 Session=sessionmaker(bind=engine)
 session=Session()
 
-class TaskInput(BaseModel):
+class TaskInput:
     task_name:str
     task_description:str
     city:str
     addess:str
     start_date:str
     end_date:str
-    skills:list(str)
-    volunteers:list(str)|None
+    skills:[]
+    volunteers:[]
 
-class ProfileUpdate(BaseModel):
+class ProfileUpdate:
     email:str
     name:str
     state:str
     city:str
     phone_num:str
 
-class Signup(BaseModel):
+class Signup:
     name:str
     email:str
     phone_num:str
@@ -95,7 +95,7 @@ def tasks_list(email:str,user:str):
 
 def task_add(email:str,tasks_input:TaskInput,user:str):
     user=select(Organisers.name).where(Organisers.email==email).first()
-    if (tasks_list(email,user).count()>0 && user=="organiser"):
+    if (tasks_list(email,user).count()>0 and user=="organiser"):
         content={"organiser":user[0],"skills":tasks_input.skills,"city":tasks_input.city,"start_date":tasks_input.start_date,"end_date":tasks_input.end_date,"task_name":tasks_input.task_name,"task_description":tasks_input.task_description,"address":tasks_input.address,"volunteers":[]}
         task_cr=Tasks(**content)
         session.add(task_cr)
@@ -104,7 +104,7 @@ def task_add(email:str,tasks_input:TaskInput,user:str):
     else:
         return False
 
-def task_edit(id:int,update:TasksInput):
+def task_edit(id:int,update:TaskInput):
     obj_to_update = session.query(Tasks).filter(Tasks.id == id).first()
     if obj_to_update:
         obj_to_update.task_name=update.task_name
@@ -157,7 +157,7 @@ def verify_user(email:str,password:str,user:str) -> bool:
         output=session.execute(select(Organisers.password_hash).where(Organisers.email==email)).first()
     else:
         return False
-    pass_hash=sha256(password.encode('utf-8')).hexdigest())
+    pass_hash=sha256(password.encode('utf-8').hexdigest())
     return output[0]==pass_hash
 
 def create_user(signup:Signup,user:str):

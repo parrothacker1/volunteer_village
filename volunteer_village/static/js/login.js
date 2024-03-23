@@ -1,32 +1,50 @@
+function login() {
+    // Get the values from the form
+    var role = document.getElementById('role').value;
+    var email = document.getElementById('Email').value;
+    var password = document.getElementById('Password').value;
 
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+    // Create a data object to send with the POST request
+    var data = {
+        input: {
+            email: email,
+            password: password
+        }
+    };
 
-        var formData = new FormData(this);
-        var email = formData.get('Email');
-        var password = formData.get('password');
-
-        fetch('/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email: email, password: password })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Invalid email or password');
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Store access token in local storage
-            localStorage.setItem('access_token', data.access_token);
-            // Store refresh token in session storage
-            sessionStorage.setItem('refresh_token', data.refresh_token);
-            console.log('Login successful');
-        })
-        .catch(error => {
-            console.error('Login failed:', error.message);
-        });
-    });
+    // Send a POST request to the FastAPI backend
+    if(role==='Organiser'){
+    fetch('/api/organisation/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (response.ok) {
+            // Redirect to the index.html page
+            window.location.href = '../static/templates/index.html';
+        } else {
+            console.error('Login failed');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });}
+    else{
+        fetch('/api/volunteer/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (response.ok) {
+            // Redirect to the index.html page
+            window.location.href = '../static/templates/index.html';
+        } else {
+            console.error('Login failed');
+        }
+    })}};

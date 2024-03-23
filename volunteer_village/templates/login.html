@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" href="{{ url_for('static',path='css/login.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Cantata+One&family=Kurale&display=swap" rel="stylesheet">
@@ -28,9 +28,9 @@
             
         </form>
         <div class="signup-link">
-            Don't have an account? <a href="signup2.html">Sign Up</a>
+            Don't have an account? <a href="/access-account/signup">Sign Up</a>
         </div>
     </div>
 </body>
-<script src="../static/js/login.js"></script>
+  <script src="{{ url_for('static',path='js/login.js') }}"></script>
 </html>

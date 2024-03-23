@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Cantata+One&family=Kurale&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/signup2.css">
+    <link rel="stylesheet" href="{{url_for('static',path='css/signup2.css') }}">
     <title>Sign-up</title>
 </head>
 <body>
@@ -93,5 +93,5 @@
         </form>
     </div>
 </body>
-<script src="../static/js/signup2.js"></script>
+  <script src="{{url_for('static',path='js/signup2.js') }}"></script>
 </html>

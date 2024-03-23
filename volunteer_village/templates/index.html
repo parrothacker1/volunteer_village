@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static',path='css/style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,8 +24,8 @@
 <!-- Navbar -->
 <div class="navbar">
  
-    <a href="index.html"><i class="ph-thin ph-house"></i>Home</a>
-    <a href="About.html"><i class="ph-thin ph-user-circle"></i>About Us</a>
+    <a href="/"><i class="ph-thin ph-house"></i>Home</a>
+    <a href="/about"><i class="ph-thin ph-user-circle"></i>About Us</a>
     <div class="dropdown">
         <button class="dropbtn"><i class="ph-thin ph-package"></i>Services</button>
         <div class="dropdown-content">
@@ -34,10 +34,10 @@
             <div id="userLinks">
                 <!-- Placeholder for dynamic content -->
             </div>
-            <a href="tasks.html">Tasks</a> <!-- New "Tasks" option -->
+            <a href="/tasks">Tasks</a> <!-- New "Tasks" option -->
         </div>
     </div>
-    <a href="login.html" class="log_in">Log In / SignUp</a>
+    <a href="/access-account/login" class="log_in">Log In / SignUp</a>
 </div>
 
 
@@ -171,5 +171,5 @@
 </div>
   
 </body>
-<script src="../static/js/nav.js"></script>
+  <script src="{{ url_for('static',path='js/nav.js') }}"></script>
 </html>

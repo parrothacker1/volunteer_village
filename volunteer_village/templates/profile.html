@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>User Profile</title>
-<link rel="stylesheet" href="../static/css/profile.css">
+    <link rel="stylesheet" href="{{ url_for('static',path='css/profile.css') }}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +39,7 @@
     </div>
 </div>
 
-<script src="../static/js/profile.js"></script>
+    <script src="{{ url_for('static',path='js/profile.js') }}"></script>
 </body>
 </html>
 

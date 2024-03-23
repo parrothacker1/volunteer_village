@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         sessionStorage.setItem('refresh_token', refresh_token);
 
         // Simulate user login with saved access token
-        fetch('/get-username', {
+        fetch('/api/user', {
             headers: {
                 'Authorization': `Bearer ${access_token}`
             }

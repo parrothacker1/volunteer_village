@@ -33,11 +33,11 @@
         <h2>Welcome to Volunteer Village</h2>
         <label for="role"></label>
         <br>
-            <select name="role"></option>
+            <select name="role" id="role"></option>
                 <option value="Oraganiser">Organiser</option>
                 <option value="Volunteer">Volunteer</option>
             </select>
-        <form action="#" method="post">
+        <!-- <form action="#" method="post">
             
             <input type="text" id="Email" placeholder="Email ID" required>
             <input type="password" name="password" placeholder="Password" required>
@@ -45,7 +45,15 @@
             <input type="submit" value="Login">
             
             
-        </form>
+        </form> -->
+                <label for="Email">Email ID</label>
+        <input type="text" id="Email" placeholder="Email ID" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Password" required>
+
+        <button onclick="login()">Login</button>
+
         <div class="signup-link">
             Don't have an account? <a href="/access-account/signup">Sign Up</a>
         </div>

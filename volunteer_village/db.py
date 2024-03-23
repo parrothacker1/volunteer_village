@@ -72,6 +72,8 @@ class Tasks(Base):
     city=Column(String)
     volunteers=Column(ARRAY(String))
 
+Base.metadata.create_all(engine)
+
 #class Feedback(Base):
 #    __tablename__="feedbacks"
 
@@ -157,18 +159,18 @@ def verify_user(email:str,password:str,user:str) -> bool:
         output=session.execute(select(Organisers.password_hash).where(Organisers.email==email)).first()
     else:
         return False
-    pass_hash=sha256(password.encode('utf-8').hexdigest())
+    pass_hash=sha256(password.encode('utf-8')).hexdigest()
     return output[0]==pass_hash
 
 def create_user(signup:Signup,user:str):
     if (user=="volunteer"):
-        content={"email":signup.email,"password_hash":sha256(signup.password.encode('utf-8').hexdigest()),"name":signup.name,"phone_num":signup.phone_num,"state":signup.state,"city":signup.city}
+        content={"email":signup.email,"password_hash":sha256(signup.password.encode('utf-8')).hexdigest(),"name":signup.name,"phone_num":signup.phone_num,"state":signup.state,"city":signup.city}
         if (not user_exists(signup.email,user)):
             user_cr=Volunteers(**content)
         else:
             return False
     elif (user=="organiser"):
-        content={"email":signup.email,"password_hash":sha256(signup.password.encode('utf-8').hexdigest()),"name":signup.name,"phone_num":signup.phone_num}
+        content={"email":signup.email,"password_hash":sha256(signup.password.encode('utf-8')).hexdigest(),"name":signup.name,"phone_num":signup.phone_num}
         if (not user_exisrs(signup.email,user)):
             user_cr=Organisers(**content)
         else:
@@ -192,12 +194,12 @@ def get_user(email:str,user:str):
 
 def user_exists(email:str,user:str) -> bool:
     if (user=="volunteer"):
-        output=session.execute(select(Volunteers).where(Volunteers.email==email))
+        output=session.execute(select(Volunteers).where(Volunteers.email==email)).fetchall()
     elif (user=="organiser"):
-        output=session.execute(select(Organisers).where(Organisers.email==email))
+        output=session.execute(select(Organisers).where(Organisers.email==email)).fetchall()
     else:
         return False
-    return output.count()>0
+    return len(output)>0
 
 def get_user_data(email:str,user:str):
     output=None

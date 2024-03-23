@@ -13,7 +13,7 @@
 <body>
     <div class="signup-container">
         <h2>Volunteer Village Signup</h2>
-        <form action="submit_form" method="post">
+        <div>
             <div class="form-group">
                 <label for="signup_type">Signup As:</label>
                 <select id="signup_type" name="signup_type">
@@ -88,9 +88,9 @@
                 <input type="password" id="volunteer_password" name="organisation_password">
                 
             </div>
-
-            <input type="submit" value="Submit">
-        </form>
+                
+            <input type="submit" id="submitBtn" value="Submit">
+        </div>
     </div>
 </body>
   <script src="{{url_for('static',path='js/signup2.js') }}"></script>

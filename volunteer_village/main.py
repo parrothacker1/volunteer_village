@@ -11,7 +11,7 @@ import jwt as JWT
 import datetime
 from pathlib import Path
 
-app=FastAPI(docs_url=False,redoc_url=False)
+app=FastAPI()
 BASE_DIR=Path(__file__).resolve().parent
 app.mount("/static",StaticFiles(directory=str(Path(BASE_DIR,'static'))),name='static')
 templates=Jinja2Templates(directory=str(Path(BASE_DIR,'templates')))
@@ -63,11 +63,11 @@ async def api_volunteer_login(login:Login,user:str):
 
 @app.post("/api/{user}/signup")
 async def api_signup(signup:Signup,user:str):
-    if (user=="volunteer" and state and city) or (user=="organiser"): 
+    if (user=="volunteer" and signup.state and signup.city) or (user=="organiser"): 
         user_exists=db.create_user(signup,user)
     else:
         return JSONResponse(content="wrong_format",status_code=status.HTTP_400_BAD_REQUEST)
-    response={"content":"already_exists","status_code":HTTP_409_CONFLICT}
+    response={"content":"already_exists","status_code":status.HTTP_409_CONFLICT}
     if(user_exists):
         payload={"content":signup.email,"user":user}
         payload["exp"]=datetime.datetime.now()+datetime.timedelta(days=120)

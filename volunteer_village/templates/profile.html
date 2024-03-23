@@ -9,8 +9,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Cantata+One&family=Kurale&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+    <div class="navbar">
+ 
+        <a href="/"><i class="ph-thin ph-house"></i>Home</a>
+        <a href="/about"><i class="ph-thin ph-user-circle"></i>About Us</a>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="ph-thin ph-package"></i>Services</button>
+            <div class="dropdown-content">
+                <a href="#footer">Contact Us</a>
+               
+                <div id="userLinks">
+                    <!-- Placeholder for dynamic content -->
+                </div>
+                <a href="/tasks">Tasks</a> <!-- New "Tasks" option -->
+            </div>
+        </div>
+        <a href="/access-account/login" class="log_in">Log In / SignUp</a>
+    </div>
 <div class="profile-container">
     <h1>User Profile</h1>
     <div id="user-details" class="user-details">
@@ -41,5 +60,7 @@
 
     <script src="{{ url_for('static',path='js/profile.js') }}"></script>
 </body>
+
+<script src="{{ url_for('static',path='js/nav.js') }}"></script>
 </html>
 

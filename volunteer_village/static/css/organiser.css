@@ -1,276 +1,3 @@
-/* body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
-  color: #333;
-}
-
-h1 {
-  text-align: center;
-  color: #007bff;
-}
-
-form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="date"],
-input[type="time"],
-textarea,
-button {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid #ccc;
-  margin: 20px 0;
-}
- */
-
- /* new */
-/*  
-
- body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom right, #333, #000);
-  color: #fff;
-}
-
-h1 {
-  text-align: center;
-  color: #007bff;
-}
-
-form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="date"],
-input[type="time"],
-textarea {
-  width: calc(100% - 22px);
-  padding: 10px;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 20px;
-  box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #333;
-}
-
-button {
-  padding: 8px 12px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 20px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid #ccc;
-  margin: 20px 0;
-}
-
-.task-container {
-  max-width: 500px;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.task {
-  margin-bottom: 20px;
-}
-
-.task-details {
-  padding: 10px;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.task-buttons {
-  display: flex;
-  justify-content: center;
-}
-
-.task-buttons button {
-  margin: 0 10px;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 20px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.task-buttons button:hover {
-  background-color: #0056b3;
-} */
-
-
-/* 2nd new */
-/* 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
-  color: #333;
-}
-
-h1 {
-  text-align: center;
-  color: #007bff;
-}
-
-form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="date"],
-input[type="time"],
-textarea,
-button {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid #ccc;
-  margin: 20px 0;
-}
-
-.task {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-.theme-toggle {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.theme-toggle-checkbox {
-  display: none;
-}
-
-.theme-toggle-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60px;
-  height: 34px;
-  border-radius: 17px;
-  background-color: #ccc;
-  cursor: pointer;
-}
-
-.toggle-icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  transition: transform 0.3s ease;
-}
-
-.sun {
-  left: 4px;
-  color: #ffdd00;
-}
-
-.moon {
-  right: 4px;
-  color: #333;
-}
-
-.theme-toggle-checkbox:checked + .theme-toggle-label {
-  background-color: #007bff;
-}
-
-.theme-toggle-checkbox:checked + .theme-toggle-label .sun {
-  transform: translateX(22px);
-}
-
-.theme-toggle-checkbox:checked + .theme-toggle-label .moon {
-  transform: translateX(-22px);
-} */
 
 
 
@@ -284,6 +11,82 @@ body {
   color: #fff;
 }
 
+
+.navbar {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: #fff;
+  padding: 0.625rem 1.25rem;
+  backdrop-filter: blur(0.625rem);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); 
+  /* border-radius: 10.3125rem;  */
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.25rem; 
+}
+
+
+.navbar a i {
+  margin-top:1%;
+  margin-right: 0.3125rem; 
+}
+
+.navbar a.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.log_in {
+  padding-right: 10px; /* Adjust the padding value as needed */
+}
+
+
+      
+      /* Dropdown Button */
+      .dropbtn {
+          background-color: transparent;
+          color:white;
+          border: none;
+          cursor: pointer;
+      }
+      
+      /* Dropdown Content (Hidden by Default) */
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+      }
+      
+      /* Links inside the dropdown */
+      .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+      }
+      
+      /* Change color of dropdown links on hover */
+      .dropdown-content a:hover {
+          background-color: #f1f1f1;
+      }
+      
+      /* Show the dropdown menu on hover */
+      .dropdown:hover .dropdown-content {
+          display: block;
+      }
+      
+      /* Style the dropdown button when hovering over the dropdown content */
+      .dropdown:hover .dropbtn {
+          background-color: #ccc;
+      }
 h1 {
   font-family: "IM Fell Great Primer SC", serif;
   font-size: 3rem;

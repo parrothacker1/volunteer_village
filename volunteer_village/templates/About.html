@@ -5,11 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteers Village: About Us</title>
     <link rel="stylesheet" href="../static/css/about.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
+    <div class="navbar">
+ 
+        <a href="/"><i class="ph-thin ph-house"></i>Home</a>
+        <a href="/about"><i class="ph-thin ph-user-circle"></i>About Us</a>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="ph-thin ph-package"></i>Services</button>
+            <div class="dropdown-content">
+                <a href="#footer">Contact Us</a>
+               
+                <div id="userLinks">
+                    <!-- Placeholder for dynamic content -->
+                </div>
+                <a href="/tasks">Tasks</a> <!-- New "Tasks" option -->
+            </div>
+        </div>
+        <a href="/access-account/login" class="log_in">Log In / SignUp</a>
+    </div>
+    
     <h1>ABOUT US</h1>
     <div class="section">
-        <h2>About Us</h2>
+        
         <p>At Volunteers Village, we believe in the power of collaboration to drive positive change in communities worldwide. Our platform serves as a bridge, connecting passionate volunteers with impactful NGOs and organizations striving to make a difference.</p></div>
     <div class="section">
         <h2>Our Mission</h2>
@@ -40,5 +59,8 @@
         <p>Ready to make a difference? Join our community today and start connecting with NGOs, volunteers, and organizations that are shaping a better tomorrow.</p>
     </div>
 
+
 </body>
+
+<script src="{{ url_for('static',path='js/nav.js') }}"></script>
 </html>

@@ -10,9 +10,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer+SC&family=Noto+Serif+Toto:wght@400..700&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
 <title>Volunteer Tasks</title>
 </head>
 <body>
+  <div class="navbar">
+ 
+    <a href="/"><i class="ph-thin ph-house"></i>Home</a>
+    <a href="/about"><i class="ph-thin ph-user-circle"></i>About Us</a>
+    <div class="dropdown">
+        <button class="dropbtn"><i class="ph-thin ph-package"></i>Services</button>
+        <div class="dropdown-content">
+            <a href="#footer">Contact Us</a>
+           
+            <div id="userLinks">
+                <!-- Placeholder for dynamic content -->
+            </div>
+            <a href="/tasks">Tasks</a> <!-- New "Tasks" option -->
+        </div>
+    </div>
+    <a href="/access-account/login" class="log_in">Log In / SignUp</a>
+</div>
   <h1>Task Management</h1>
   <form id="taskForm">
     
